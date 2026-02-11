@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<title>Valentine 💘</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ff9ecb, #ff5fa2);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    .box {
+        text-align: center;
+        background: white;
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+        margin-bottom: 40px;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 15px 40px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    #yes {
+        background: #4CAF50;
+        color: white;
+    }
+
+    #no {
+        background: #ff4d4d;
+        color: white;
+        position: absolute;
+    }
+
+    .heart {
+        font-size: 60px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <div class="heart">❤️</div>
+    <h1>Do you want to be my Valentine?</h1>
+    <button id="yes">YES 💕</button>
+    <button id="no">NO 😈</button>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+
+function moveButton() {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 60);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+
+noBtn.addEventListener("mouseenter", moveButton);
+noBtn.addEventListener("click", moveButton);
+
+yesBtn.addEventListener("click", () => {
+    document.body.innerHTML = `
+        <div style="
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:40px;
+            font-family:Arial;
+            background:#ff9ecb;">
+            YAYYY ❤️ See you on Valentine's Day! 💕
+        </div>
+    `;
+});
+</script>
+
+</body>
+</html>
